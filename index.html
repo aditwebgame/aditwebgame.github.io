@@ -2,9 +2,9 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="3; url=https://aditwebgame.github.io/Commands-Prompt/" />
+  <meta http-equiv="refresh" content="7; url=https://aditwebgame.github.io/Commands-Prompt/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adit Web - Redirect</title>
+  <title>🚀 Terminal Bridge Online – Adit Command Interface</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
@@ -43,25 +43,24 @@
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
       text-align: center;
-      max-width: 400px;
+      max-width: 500px;
       width: 100%;
       animation: fadeIn 0.6s ease-in-out;
     }
 
     .logo-img {
-      width: 90px;
-      height: 90px;
+      width: 80px;
+      height: 80px;
       border-radius: 20%;
       margin-bottom: 1rem;
       border: 2px solid var(--accent);
-      object-fit: cover;
     }
 
     .brand {
       font-size: 1.5rem;
       font-weight: 600;
       color: white;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .loader {
@@ -74,8 +73,11 @@
       animation: spin 1s linear infinite;
     }
 
-    p {
-      font-size: 0.95rem;
+    .typing {
+      text-align: left;
+      white-space: pre-wrap;
+      min-height: 100px;
+      margin-bottom: 1rem;
     }
 
     a {
@@ -107,12 +109,47 @@
 </head>
 <body>
   <div class="card">
-    <!-- Gambar animasi cowok keren -->
-    <img src="https://i.pinimg.com/564x/6a/7c/79/6a7c7902b3b82dc7c61a5f5a896cb835.jpg" alt="Cowok Keren" class="logo-img" />
-    <div class="brand">Adit Web</div>
-    <p>Mengarahkan kamu ke Command Prompt Page...</p>
+    <img src="https://i.pinimg.com/564x/6a/7c/79/6a7c7902b3b82dc7c61a5f5a896cb835.jpg" alt="Robot Keren" class="logo-img" />
+    <div class="brand">Adit Web System</div>
+
+    <div id="typing" class="typing"></div>
+
     <div class="loader"></div>
-    <p>Kalau tidak otomatis, klik <a href="https://aditwebgame.github.io/Commands-Prompt/">di sini</a>.</p>
+    <p>Jika tidak otomatis, klik <a href="https://aditwebgame.github.io/Commands-Prompt/">di sini</a>.</p>
   </div>
+
+  <script>
+    const texts = [
+      "🤖 Sistem aktif...",
+      "🎯 Target terdeteksi: Command Prompt Interface",
+      "🚀 Peluncuran proses pengalihan dalam 3 detik...",
+      "🔐 Protokol aman disiapkan. Mohon jangan tutup halaman ini."
+    ];
+
+    let i = 0;
+    let j = 0;
+    let currentText = '';
+    let isDeleting = false;
+    const typingElement = document.getElementById("typing");
+
+    function type() {
+      if (i < texts.length) {
+        if (j < texts[i].length) {
+          currentText += texts[i].charAt(j);
+          typingElement.innerHTML = currentText;
+          j++;
+          setTimeout(type, 40);
+        } else {
+          currentText += "\n";
+          typingElement.innerHTML = currentText;
+          i++;
+          j = 0;
+          setTimeout(type, 400);
+        }
+      }
+    }
+
+    window.onload = type;
+  </script>
 </body>
 </html>
