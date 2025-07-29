@@ -2,121 +2,117 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="5; url=https://adit-setiawn.web.app/" />
+  <meta http-equiv="refresh" content="3; url=https://aditwebgame.github.io/Commands-Prompt/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adit Web - Redirect</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
   <style>
+    :root {
+      --accent: #00e0ff;
+      --text: #ffffffcc;
+      --glass: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
-    body, html {
-      width: 100%;
-      height: 100%;
-      font-family: 'Orbitron', sans-serif;
-      color: #fff;
-      overflow: hidden;
-    }
-
-    video.bg-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      filter: brightness(0.4) blur(2px);
-    }
-
-    .overlay {
+    body {
+      background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+      color: var(--text);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
       text-align: center;
-      backdrop-filter: blur(3px);
+      max-width: 400px;
+      width: 100%;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .logo-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 20%;
+      margin-bottom: 1rem;
+      border: 2px solid var(--accent);
+      object-fit: cover;
     }
 
     .brand {
-      font-size: 2rem;
-      color: #00fff7;
-      text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-      animation: glitch 1s infinite;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
       margin-bottom: 0.5rem;
     }
 
-    @keyframes glitch {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 1px); }
-      40% { transform: translate(2px, -1px); }
-      60% { transform: translate(-1px, 2px); }
-      80% { transform: translate(1px, -2px); }
-      100% { transform: translate(0); }
-    }
-
     .loader {
-      width: 45px;
-      height: 45px;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-top: 4px solid #00fff7;
+      margin: 1.5rem auto;
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top: 5px solid var(--accent);
       border-radius: 50%;
       animation: spin 1s linear infinite;
-      margin: 1.5rem 0;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    p {
+      font-size: 0.95rem;
     }
 
     a {
-      color: #00fff7;
+      color: var(--accent);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
     }
 
-    .audio-trigger {
-      margin-top: 1rem;
-      font-size: 0.85rem;
-      opacity: 0.7;
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.5rem;
+      }
+      .brand {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Video Background -->
-  <video autoplay muted loop class="bg-video" playsinline>
-    <source src="https://cdn.pixabay.com/video/2023/03/12/157346-812842380_large.mp4" type="video/mp4" />
-  </video>
-
-  <!-- Overlay Content -->
-  <div class="overlay">
+  <div class="card">
+    <!-- Gambar animasi cowok keren -->
+    <img src="https://i.pinimg.com/564x/6a/7c/79/6a7c7902b3b82dc7c61a5f5a896cb835.jpg" alt="Cowok Keren" class="logo-img" />
     <div class="brand">Adit Web</div>
-    <p>Mengarahkan ke website utama kamu...</p>
+    <p>Mengarahkan kamu ke Command Prompt Page...</p>
     <div class="loader"></div>
-    <p>Jika tidak otomatis, klik <a href="https://adit-setiawn.web.app/">di sini</a>.</p>
-    <div class="audio-trigger">
-      Musik otomatis saat halaman aktif.
-    </div>
+    <p>Kalau tidak otomatis, klik <a href="https://aditwebgame.github.io/Commands-Prompt/">di sini</a>.</p>
   </div>
-
-  <!-- Background Music -->
-  <audio id="bgmusic" autoplay loop>
-    <source src="https://cdn.pixabay.com/audio/2023/04/18/audio_6e48a34910.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-    // Play audio after user interaction (required di browser modern)
-    document.body.addEventListener("click", () => {
-      const audio = document.getElementById("bgmusic");
-      if (audio.paused) {
-        audio.play().catch(e => console.log("Auto-play blocked"));
-      }
-    });
-  </script>
 </body>
 </html>
