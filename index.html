@@ -1,10 +1,117 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=Commands-Prompt/" />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>Redirecting to <a href="Commands-Prompt/">Commands Prompt</a></p>
-  </body>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="3; url=https://adit-setiawn.web.app/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adit Web - Redirect</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --accent: #00e0ff;
+      --text: #ffffffcc;
+      --glass: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .logo-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 20%;
+      margin-bottom: 1rem;
+      border: 2px solid var(--accent);
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .loader {
+      margin: 1.5rem auto;
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top: 5px solid var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.5rem;
+      }
+      .brand {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Logo Adit di sini -->
+    <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Logo Adit" class="logo-img" />
+    <div class="brand">Adit Web</div>
+    <p>Mengarahkan kamu ke website utama...</p>
+    <div class="loader"></div>
+    <p>Kalau tidak otomatis, klik <a href="https://adit-setiawn.web.app/">di sini</a>.</p>
+  </div>
+</body>
 </html>
